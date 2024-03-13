@@ -73,7 +73,9 @@ android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
-
+     buildFeatures {
+         buildConfig = true
+       }
     namespace "com.ahorajuego"
     defaultConfig {
         applicationId "com.ahorajuego"
