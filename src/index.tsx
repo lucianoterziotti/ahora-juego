@@ -5,8 +5,9 @@ import {
 } from '@react-navigation/native-stack';
 import { DripsyProvider, makeTheme } from 'dripsy';
 
-import Game from './screens/Game';
-import Home from './screens/Home';
+import Game from "./screens/Game";
+import Home from "./screens/Home";
+import Welcome from "./screens/Welcome";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,16 +32,21 @@ const screenOptions: NativeStackNavigationOptions = {
 const theme = makeTheme({});
 
 const App = () => {
-    return (
-        <DripsyProvider theme={theme}>
-            <NavigationContainer theme={appTheme}>
-                <Stack.Navigator screenOptions={screenOptions}>
-                    <Stack.Screen name='Home' component={Home} options={{ title: 'Chess' }} />
-                    <Stack.Screen name='Game' component={Game} />
-                </Stack.Navigator>
-            </NavigationContainer>
-        </DripsyProvider>
-    );
+  return (
+    <DripsyProvider theme={theme}>
+      <NavigationContainer theme={appTheme}>
+        <Stack.Navigator screenOptions={screenOptions}>
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{title: 'Juego del Ahora - Nuevo Ajedrez'}}
+          />
+          <Stack.Screen name="Welcome" component={Welcome} />
+          <Stack.Screen name="Game" component={Game} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </DripsyProvider>
+  );
 };
 
 export default App;
